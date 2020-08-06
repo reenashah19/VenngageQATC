@@ -5,15 +5,14 @@ import main.pages.SignUpPage;
 import main.pages.TemplatesPage;
 
 public class TestSignUp {
-	
-	private Account account;
+		
 	private SignUpPage signUpPage;
 	private TemplatesPage templatePage;
 	
 	@Before
 	public void setUp(){
-		// Instantiate page objects here
-		account = new Account(firstName, lastName, email, password)
+		// Instantiate page objects here	
+		
 		signUpPage = new SignUpPage();
 		templatePage = new TemplatesPage();
 		
@@ -22,9 +21,10 @@ public class TestSignUp {
 	@Test
 	public void testSignUp(){
 		// Write test steps here
-		selenium.goToUrl("https://venngage.com/templates");
+		templatePage.NavigateToPage("https://venngage.com/templates");
 		templatePage.VerifyText("Create");
 		templatePage.ClickOnsignUp();
-		
+		signUpPage.CreateAccount();
+		signUpPage.VerifyAccountIsCreated();
 	}
 }

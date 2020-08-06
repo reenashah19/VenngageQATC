@@ -39,5 +39,36 @@ public class Selenium {
     public void clickByXpath(String xpath) {
         click(By.xpath(xpath));
     }
+    
+    /**
+     * Checks the element with  the specified xpath is present     * 
+     *
+     * @param xpath xpath to click
+     */
+    public void elementPresent(String xpath) {
+        Ispresent(By.xpath(xpath));
+    }
+    
+    
+    /**
+     * Mouse hovers over the element with  the specified xpath     * 
+     *
+     * @param xpath xpath to click
+     */
+    public void mousehover(String xpath) {
+    	moveToElement(By.xpath(xpath));
+    }
+    
+    /**
+     * Method to verify text of the element with  the specified xpath     * 
+     *
+     * @param xpath xpath to click
+     * @param data data to verfiy
+     */
+    public void verfiyText(String xpath,String data) {
+    	driver.findElement(By.xpath(xpath)).getText().equals(data)
+    }
+    
+    
 	
 }

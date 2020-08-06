@@ -17,7 +17,7 @@ public class SignUpPage {
 	private Account account;
 	
 	public SignUpPage(){
-		this.selenium = Selenium();
+		this.selenium = new Selenium();
 		this.account = new Account("QA", "Test",  "qa."+System.currentTimeMillis()+"@venngage.com", "123456");
 	}
 	
@@ -33,4 +33,4 @@ public class SignUpPage {
 	public void VerifyAccountIsCreated() {
 		selenium.elementPresent(accountProfile);
 	}
-	
+}
